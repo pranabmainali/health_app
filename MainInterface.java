@@ -9,4 +9,16 @@ public class MainInterface {
         userInterface = new UserInterface(this);
 
     }
+
+    /**
+     * login method 
+     * param - username, and password input
+     * returns boolean - depending is username and password match
+     */
+    public boolean LogIn(String username, String password){
+        return false;
+
+    }
+
+   
 }
