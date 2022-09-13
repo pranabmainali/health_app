@@ -1,6 +1,8 @@
 public class ExerciseInterface {
+    MainInterface mainInterface;
 
-    public ExerciseInterface() {
+    public ExerciseInterface(MainInterface mainInterface) {
+        this.mainInterface = mainInterface;
 
     }
 }

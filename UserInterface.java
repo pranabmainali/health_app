@@ -1,6 +1,7 @@
 public class UserInterface {
+    MainInterface mainInterface;
 
-    public UserInterface() {
-
+    public UserInterface(MainInterface mainInterface) {
+        this.mainInterface = mainInterface;
     }
 }
