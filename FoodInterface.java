@@ -1,6 +1,8 @@
 public class FoodInterface {
+    MainInterface mainInterface;
 
-    public FoodInterface() {
+    public FoodInterface(MainInterface mainInterface) {
+        this.mainInterface = mainInterface;
 
     }
 }
