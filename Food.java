@@ -1,5 +1,5 @@
 public class Food {
-    private String name;
+    private String foodName;
     private int calorie;
     private int protien;
     private int carb;
@@ -11,15 +11,17 @@ public class Food {
         int carb,
         int fat){
 
-            this.name = name;
+            this.foodName = name;
             this.calorie = calorie;
             this.protien = protien;
             this.carb = carb;
             this.fat = fat;
     }
 
+    // GETTERS
+
     public String getName(){
-        return name;
+        return foodName;
     }
 
     public int getCalorie(){
