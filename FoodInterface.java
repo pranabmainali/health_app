@@ -8,7 +8,7 @@ public class FoodInterface {
     MainInterface mainInterface;
     ArrayList<Meal> meals;
     
-
+    //CONSTRUCTOR
     public FoodInterface(MainInterface mainInterface) {
         this.mainInterface = mainInterface;
         meals = new ArrayList<>();
@@ -18,15 +18,11 @@ public class FoodInterface {
 
     //methods 
     /**
-     * 
      * @parameter meal, an object of type Meal
-     * @returns none, appends the meal in question to the arraylist of meals
-     *
+     * @returns none, appends the meal in question to the arraylist of meal
      */
     public void addMeal(Meal meal){
 
 
     }
-
- 
 }

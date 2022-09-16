@@ -24,8 +24,8 @@ public class User {
             this.activityLevel = activityLevel;
     }
 
-    //methods 
-    
+//SETTERS -------------------------------------------------------------------------------------    
+
     /**
      * 
      * @param firstname
