@@ -85,4 +85,61 @@ public class User {
         this.activityLevel = activityLevel;
         return true;
     }
+
+//GETTERS -----------------------------------------------------------------------------
+
+
+    /**
+     * 
+     * @param none
+     * @return first name
+     */
+    public String getFirstName(){
+        return firstName;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return last name
+     */
+    public String getLastName(){
+        return lastName;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return user's age
+     */
+    public int getAge(){
+        return age;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return user's height
+     */
+    public int getHeight(){
+        return height;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return user's gender
+     */
+    public GENDER getGender(){
+        return gender;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return user's activity level
+     */
+    public ActivityLevelEnum getActivityLevel(){
+        return activityLevel;
+    }
 }
