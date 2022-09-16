@@ -1,17 +1,20 @@
 
 import java.util.ArrayList;
 
+import javax.swing.text.AbstractWriter;
+
 
 public class FoodInterface {
     MainInterface mainInterface;
+    ArrayList<Meal> meals;
+    
 
     public FoodInterface(MainInterface mainInterface) {
         this.mainInterface = mainInterface;
+        meals = new ArrayList<>();
+        };
 
     }
-
-    //declaring and initializing local variables
-    ArrayList<Meal> meals = new  ArrayList<Meal>();
 
     //methods 
     /**
