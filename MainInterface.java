@@ -38,8 +38,20 @@ public class MainInterface {
      * @returns boolean, True if there is an account and both username and password are proper, Flase if otherwise
      *
      */
-    public boolean signUP(String username, String password) {
-        
+    public boolean signUP(String username,
+        String password,
+        String firstname,
+        String lastname, 
+        int age,
+        int height,
+        GENDER gender,
+        ActivityLevelEnum activityLevel) {
+
+            if (height > 0 && age > 0){
+                User newUser = new User(username, password, firstname, lastname, age, height, gender, activityLevel);
+                listOfUsers.add(newUser);
+                return true;
+            }
 
         return false;
     }

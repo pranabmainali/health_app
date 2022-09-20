@@ -1,9 +1,6 @@
 
 import java.util.ArrayList;
 
-import javax.swing.text.AbstractWriter;
-
-
 public class FoodInterface {
     MainInterface mainInterface;
     ArrayList<Meal> meals;
@@ -21,7 +18,6 @@ public class FoodInterface {
      * @returns none, appends the meal in question to the arraylist of meal
      */
     public void addMeal(Meal meal){
-
-
+        meals.add(meal);
     }
 }

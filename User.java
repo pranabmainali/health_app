@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class User {
 
     //declaring and initializing some local variables for the user class
@@ -10,6 +12,7 @@ public class User {
     private int height;
     private GENDER gender;
     private ActivityLevelEnum activityLevel;
+    private ArrayList<Meal> meals;
     
     //constructor of the user class
     public User(String username,
