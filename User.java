@@ -2,20 +2,26 @@ public class User {
 
     //declaring and initializing some local variables for the user class
 
-    String firstName;
-    String lastName;
-    int age;
-    int height;
-    GENDER gender;
-    ActivityLevelEnum activityLevel;
+    private String userName;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private int age;
+    private int height;
+    private GENDER gender;
+    private ActivityLevelEnum activityLevel;
     
     //constructor of the user class
-    public User(String firstname,
+    public User(String username,
+        String password,
+        String firstname,
         String lastname, 
         int age,
         int height,
         GENDER gender,
         ActivityLevelEnum activityLevel){
+            this.userName = username;
+            this.password = password;
             this.firstName = firstname;
             this.lastName = lastname;
             this.age = age;
@@ -25,6 +31,26 @@ public class User {
     }
 
 //SETTERS -------------------------------------------------------------------------------------    
+
+    /**
+     * 
+     * @param username
+     * @return true after changing the first name of the user
+     */
+    public boolean changeUserName(String userName){
+        this.userName = userName;
+        return true;
+    }
+
+    /**
+     * 
+     * @param password
+     * @return true after changing the first name of the user
+     */
+    public boolean changePassword(String password){
+        this.password = password;
+        return true;
+    }
 
     /**
      * 
@@ -88,6 +114,23 @@ public class User {
 
 //GETTERS -----------------------------------------------------------------------------
 
+    /**
+     * 
+     * @param none
+     * @return username
+     */
+    public String getUserName(){
+        return userName;
+    }
+
+    /**
+     * 
+     * @param none
+     * @return password
+     */
+    public String getPassword(){
+        return password;
+    }
 
     /**
      * 
