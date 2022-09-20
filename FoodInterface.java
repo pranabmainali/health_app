@@ -12,7 +12,6 @@ public class FoodInterface {
     public FoodInterface(MainInterface mainInterface) {
         this.mainInterface = mainInterface;
         meals = new ArrayList<>();
-        };
 
     }
 
