@@ -11,6 +11,7 @@ public class MainInterface {
         exerciseInterface = new ExerciseInterface(this);
         userInterface = new UserInterface(this);
         listOfUsers = new ArrayList<>();
+        run();
     }
 
     /**
@@ -55,5 +56,7 @@ public class MainInterface {
 
         return false;
     }
+
+    public void run()
 
 }
