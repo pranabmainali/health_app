@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainInterface {
     FoodInterface foodInterface;
     ExerciseInterface exerciseInterface;
     UserInterface userInterface;
     ArrayList <User> listOfUsers;
+    User currentUser;
 
     public MainInterface() {
         foodInterface = new FoodInterface(this);
@@ -57,6 +59,47 @@ public class MainInterface {
         return false;
     }
 
-    public void run()
+    /**
+     * simple run function to see if current login function works
+     */
+    public void run(){
+
+        User newUser = new User("pmainali", 
+            "idk", 
+            "Pranab", 
+            "Mainali", 
+            20, 
+            188, 
+            GENDER.MALE, 
+            ActivityLevelEnum.VERY_ACTIVE);
+        listOfUsers.add(newUser);
+
+        try (Scanner myObj = new Scanner(System.in)) {
+            System.out.println("press 1 to sign in, 2 to sign up");
+            String loginInput = myObj.nextLine();
+
+            if (loginInput.equals("1")){
+                System.out.println("Username : ");
+                String username = myObj.nextLine();
+
+                System.out.println("Password : ");
+                String password = myObj.nextLine();
+
+                for (int i=0; i<listOfUsers.size(); i++){
+                    if (listOfUsers.get(i).getUserName().equals(username)){
+                        if (listOfUsers.get(i).getPassword().equals(password))
+                            currentUser = listOfUsers.get(i);
+                        else 
+                            System.out.println("Wrong username or password");
+                        
+                    }
+                    else
+                        System.out.println("Wrong username or password");
+                }
+
+            }
+
+        }
+    }
 
 }
