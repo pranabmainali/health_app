@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainInterface {
@@ -19,7 +20,7 @@ public class MainInterface {
     /**
      * login method for login button
      * @parameter String username, String password
-     * @returns boolean, True if there is an account and both username and password are proper, Flase if otherwise
+     * @returns boolean, True if there is an account and both username and password are proper, False if otherwise
      *
      */
     public boolean logIn(String username, String password) {
@@ -36,9 +37,10 @@ public class MainInterface {
     }
 
     /**
-     * login method for login button
-     * @parameter String username, String password
-     * @returns boolean, True if there is an account and both username and password are proper, Flase if otherwise
+     * login method for signUp button
+     * @parameter String username, String password, String firstname, String lastname, 
+     *            int age, int height, GENDER gender, ActivityLevelEnum activityLevel
+     * @returns True if user inputs are valid (Adds the new user who wants to sign up into the list of existing users), otherwise returns False.
      *
      */
     public boolean signUP(String username,
@@ -94,12 +96,15 @@ public class MainInterface {
                         
                     }
                     else
-                        System.out.println("Wrong username or password");
+                        System.out.println("Wrong username");
                 }
 
             }
 
         }
     }
+
+}
+
 
 }
