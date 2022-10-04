@@ -1,7 +1,5 @@
 package GUI;
 
-import java.awt.Dimension;
-import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -53,7 +51,7 @@ public class LoginFrame extends JFrame {
 
         //adding login button
         loginButton = new JButton("Login");
-        loginButton.setBounds(200, 300, 50, 50);
+        loginButton.setBounds(200, 300, 100, 50);
         panel.add(loginButton);
 
         // setting of icon
