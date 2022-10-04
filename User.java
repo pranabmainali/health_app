@@ -56,7 +56,6 @@ public class User {
     }
 
     /**
-     * 
      * @param firstname
      * @return true after changing the first name of the user
      */
