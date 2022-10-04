@@ -1,6 +1,10 @@
+
+import GUI.LoginFrame;
+
 public class Main {
 
     public static void main(String args[]) {
-        MainInterface mainInterface = new MainInterface();
+        LoginFrame loginFrame = new LoginFrame();
+        // MainInterface mainInterface = new MainInterface();
     }
 }
