@@ -1,9 +1,9 @@
 package GUI;
 
 public class SignUpFrame {
-    
+    MainGUIInterface guiInterface;
 
-    public SignUpFrame(){
-        
+    public SignUpFrame(MainGUIInterface guiInterface){
+        this.guiInterface = guiInterface;
     }
 }

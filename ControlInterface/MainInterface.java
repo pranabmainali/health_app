@@ -56,7 +56,7 @@ public class MainInterface {
             String lastname,
             int age,
             int height,
-            GENDER gender,
+            GenderEnum gender,
             ActivityLevelEnum activityLevel) {
 
         if (height > 0 && age > 0) {
@@ -83,7 +83,7 @@ public class MainInterface {
                 "Mainali",
                 20,
                 188,
-                GENDER.MALE,
+                GenderEnum.MALE,
                 ActivityLevelEnum.VERY_ACTIVE);
         listOfUsers.add(newUser);
 

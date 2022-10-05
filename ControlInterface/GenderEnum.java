@@ -1,5 +1,5 @@
 package ControlInterface;
-public enum GENDER {
+public enum GenderEnum {
     MALE,
     FEMALE
 }
