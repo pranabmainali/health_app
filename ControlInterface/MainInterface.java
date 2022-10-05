@@ -1,3 +1,4 @@
+package ControlInterface;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,11 +26,12 @@ public class MainInterface {
      *
      */
     public boolean logIn(String username, String password) {
-        if (listOfUsers.isEmpty() != false) {
+        if (listOfUsers.size()>0) {
             for (int i = 0; i < listOfUsers.size(); i++) {
                 if (listOfUsers.get(i).getUserName().equals(username)) {
-                    if (listOfUsers.get(i).getPassword().equals(password))
+                    if (listOfUsers.get(i).getPassword().equals(password)){
                         return true;
+                    }
                 }
             }
         }
@@ -66,6 +68,10 @@ public class MainInterface {
         return false;
     }
 
+    public ArrayList<User> getListofUsers(){
+        return listOfUsers;
+    }
+
     /**
      * simple run function to see if current login function works
      */
@@ -81,6 +87,7 @@ public class MainInterface {
                 ActivityLevelEnum.VERY_ACTIVE);
         listOfUsers.add(newUser);
 
+        /*
         try (Scanner myObj = new Scanner(System.in)) {
             System.out.println("press 1 to sign in, 2 to sign up");
             String loginInput = myObj.nextLine();
@@ -105,7 +112,7 @@ public class MainInterface {
 
             }
 
-        }
+        }*/
     }
 
 }

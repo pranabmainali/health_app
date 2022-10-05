@@ -1,5 +1,7 @@
 package GUI;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -8,15 +10,18 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class LoginFrame extends JFrame {
+public class LoginFrame extends JFrame implements ActionListener{
 
     private static JLabel usernameLabel;
     private static JLabel passwordLabel;
     private static JTextField usernameTextField;
     private static JPasswordField passwordTextField;
     private static JButton loginButton;
+    private MainGUIInterface guiInterface;
 
-    public LoginFrame() {
+    public LoginFrame(MainGUIInterface guiInterface) {
+
+        this.guiInterface = guiInterface;
 
         //Frame
         this.setTitle("Health Simple");
@@ -51,6 +56,7 @@ public class LoginFrame extends JFrame {
 
         //adding login button
         loginButton = new JButton("Login");
+        loginButton.addActionListener(this);
         loginButton.setBounds(200, 300, 100, 50);
         panel.add(loginButton);
 
@@ -61,6 +67,20 @@ public class LoginFrame extends JFrame {
         //adding everything to everything
         this.setVisible(true);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String username = usernameTextField.getText();
+        String password = new String (passwordTextField.getPassword());
+        boolean loggedInStatus = guiInterface.mainInterface.logIn(username, password);
+
+        if (loggedInStatus == true){
+            System.out.println("logged in");
+        }
+        else if (loggedInStatus==false){
+            System.out.println("login failed");
+        }
     }
 
 

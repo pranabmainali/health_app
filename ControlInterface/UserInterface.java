@@ -1,3 +1,4 @@
+package ControlInterface;
 public class UserInterface {
     MainInterface mainInterface;
 

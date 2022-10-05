@@ -1,3 +1,4 @@
+package ControlInterface;
 public class ExerciseInterface {
     MainInterface mainInterface;
 

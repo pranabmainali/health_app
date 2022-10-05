@@ -1,3 +1,4 @@
+package ControlInterface;
 
 public class Food {
     private String foodName;

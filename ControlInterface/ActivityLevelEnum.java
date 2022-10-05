@@ -1,3 +1,4 @@
+package ControlInterface;
 
 public enum ActivityLevelEnum {
     
