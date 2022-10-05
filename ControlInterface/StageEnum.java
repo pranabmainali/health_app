@@ -1,8 +1,11 @@
 package ControlInterface;
 
 public enum StageEnum {
-    LOGGEDOUT,
-    enum LLOGGEDIN{
-
+    enum LOGGEDOUT{
+        LoginPage,
+        SignUpPage
+    }
+    enum LOGGEDIN{
+        MainPage
     }
 }
