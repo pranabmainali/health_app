@@ -5,16 +5,23 @@ import ControlInterface.*;
 public class MainGUIInterface {
 
     public MainInterface mainInterface;
+    LoginFrame loginFrame;
 
     public MainGUIInterface(MainInterface mainInterface){
         this.mainInterface = mainInterface;
-        LoginFrame loginFrame = new LoginFrame(this);
-        //SignUpFrame signUpFrame = new SignUpFrame(this);
+        loginFrame = new LoginFrame(this);
         //run();
     }
 
     public void run(){
 
+    }
+
+    public void changeStage(StageEnum nextEnum){
+        if (nextEnum.equals(StageEnum.SignUpPage)){
+            SignUpFrame signUpFrame = new SignUpFrame(this);
+            loginFrame.dispose();
+        }
     }
 
 

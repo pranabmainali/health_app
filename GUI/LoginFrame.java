@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ControlInterface.StageEnum;
+
 public class LoginFrame extends JFrame implements ActionListener{
 
     private static JLabel usernameLabel;
@@ -72,6 +74,7 @@ public class LoginFrame extends JFrame implements ActionListener{
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
                 System.out.println("hello");
+                guiInterface.changeStage(StageEnum.SignUpPage);
             }
 
             @Override

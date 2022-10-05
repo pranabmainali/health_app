@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -16,6 +17,8 @@ public class SignUpFrame extends JFrame implements ActionListener{
     private static JTextField usernameTextField;
     private static JLabel passwordLabel;
     private static JPasswordField passwordTextField;
+    private static JLabel confirmPasswordLabel;
+    private static JPasswordField confirmPasswordTextField;
     private static JLabel firstNameLabel;
     private static JTextField firstNameTextField;
     private static JLabel lastNameLabel;
@@ -23,7 +26,7 @@ public class SignUpFrame extends JFrame implements ActionListener{
     private static JLabel ageLabel;
     private static JTextField ageTextField;
     private static JLabel heightLabel;
-    private static JTextField heighTextField;
+    private static JTextField heightTextField;
     private static JButton loginButton;
 
 
@@ -42,31 +45,82 @@ public class SignUpFrame extends JFrame implements ActionListener{
         panel.setLayout(null);
         this.add(panel);
 
+        //adding firstname textfield
+        firstNameTextField = new JTextField();
+        firstNameTextField.setBounds(100, 100, 270, 50);
+        panel.add(firstNameTextField);
+
+        //adding firstname label
+        firstNameLabel = new JLabel("First name");
+        firstNameLabel.setBounds(100, 70, 100, 40);
+        firstNameLabel.setFont(new Font(firstNameLabel.getName(), Font.PLAIN, 20));
+        panel.add(firstNameLabel);
+
+        //adding lastname textfield
+        lastNameTextField = new JTextField();
+        lastNameTextField.setBounds(400, 100, 275, 50);
+        panel.add(lastNameTextField);
+
+        //adding lastname label
+        lastNameLabel = new JLabel("Last name");
+        lastNameLabel.setBounds(400, 70, 100, 40);
+        lastNameLabel.setFont(new Font(lastNameLabel.getName(), Font.PLAIN, 20));
+        panel.add(lastNameLabel);
+
+        //adding username textfield
+        usernameTextField = new JTextField();
+        usernameTextField.setBounds(100, 200, 575, 50);
+        panel.add(usernameTextField);
+
         //adding username label
-        usernameLabel = new JLabel("Username");
-        usernameLabel.setBounds(60, 150, 100, 40);
+        usernameLabel = new JLabel("Email");
+        usernameLabel.setBounds(100, 170, 100, 40);
+        usernameLabel.setFont(new Font(usernameLabel.getName(), Font.PLAIN, 20));
         panel.add(usernameLabel);
+
+        //adding password textfield
+        passwordTextField = new JPasswordField();
+        passwordTextField.setBounds(100, 300, 275, 50);
+        panel.add(passwordTextField);
 
         //adding password label
         passwordLabel = new JLabel("Password");
-        passwordLabel.setBounds(60, 200, 100, 40);
+        passwordLabel.setBounds(100, 270, 100, 40);
+        passwordLabel.setFont(new Font(passwordLabel.getName(), Font.PLAIN, 20));
         panel.add(passwordLabel);
 
-        //adding usernameTextfield
-        usernameTextField = new JTextField();
-        usernameTextField.setBounds(150, 150, 200, 40);
-        panel.add(usernameTextField);
+        //adding confirm password textfield
+        confirmPasswordTextField = new JPasswordField();
+        confirmPasswordTextField.setBounds(400, 300, 270, 50);
+        panel.add(confirmPasswordTextField);
 
-        //adding passwordTextfield
-        passwordTextField = new JPasswordField();
-        passwordTextField.setBounds(150, 200, 200, 40);
-        panel.add(passwordTextField);
+        //adding confirm password label
+        confirmPasswordLabel = new JLabel("Confirm Password");
+        confirmPasswordLabel.setBounds(400, 270, 200, 40);
+        confirmPasswordLabel.setFont(new Font(confirmPasswordLabel.getName(), Font.PLAIN, 20));
+        panel.add(confirmPasswordLabel);
 
-        //adding login button
-        loginButton = new JButton("Login");
-        loginButton.addActionListener(this);
-        loginButton.setBounds(200, 300, 100, 50);
-        panel.add(loginButton);
+        //adding age textfield
+        ageTextField = new JTextField();
+        ageTextField.setBounds(100, 400, 275, 50);
+        panel.add(ageTextField);
+
+        //adding age label
+        ageLabel = new JLabel("age");
+        ageLabel.setBounds(100, 365, 100, 40);
+        ageLabel.setFont(new Font(ageLabel.getName(), Font.PLAIN, 20));
+        panel.add(ageLabel);
+
+        //adding height textfield
+        heightTextField = new JTextField();
+        heightTextField.setBounds(400, 400, 275, 50);
+        panel.add(heightTextField);
+
+        //adding height label
+        heightLabel = new JLabel("Height");
+        heightLabel.setBounds(400, 365, 100, 40);
+        heightLabel.setFont(new Font(heightLabel.getName(), Font.PLAIN, 20));
+        panel.add(heightLabel);
 
         // setting of icon
         ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
