@@ -11,7 +11,7 @@ public class User {
     private String lastName;
     private int age;
     private int height;
-    private GENDER gender;
+    private GenderEnum gender;
     private ActivityLevelEnum activityLevel;
     private ArrayList<Meal> meals;
     
@@ -22,7 +22,7 @@ public class User {
         String lastname, 
         int age,
         int height,
-        GENDER gender,
+        GenderEnum gender,
         ActivityLevelEnum activityLevel){
             this.userName = username;
             this.password = password;
@@ -100,7 +100,7 @@ public class User {
      * @param gender
      * @return true after changing the gender of the user
      */
-    public boolean changeGender(GENDER gender){
+    public boolean changeGender(GenderEnum gender){
         this.gender = gender;
         return true;
     }
@@ -176,7 +176,7 @@ public class User {
      * @param none
      * @return user's gender
      */
-    public GENDER getGender(){
+    public GenderEnum getGender(){
         return gender;
     }
 

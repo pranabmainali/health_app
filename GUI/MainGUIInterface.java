@@ -9,6 +9,7 @@ public class MainGUIInterface {
     public MainGUIInterface(MainInterface mainInterface){
         this.mainInterface = mainInterface;
         LoginFrame loginFrame = new LoginFrame(this);
+        //SignUpFrame signUpFrame = new SignUpFrame(this);
         //run();
     }
 

@@ -1,7 +1,10 @@
 package GUI;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -53,6 +56,38 @@ public class LoginFrame extends JFrame implements ActionListener{
         passwordTextField = new JPasswordField();
         passwordTextField.setBounds(150, 200, 200, 40);
         panel.add(passwordTextField);
+
+        //adding signup button
+        JLabel signUpInstruction = new JLabel();
+        signUpInstruction.setText("To sign up please click ");
+        signUpInstruction.setBounds(150, 220, 200, 100);
+        panel.add(signUpInstruction);
+
+        JLabel signUpButton = new JLabel();
+        signUpButton.setText("here.");
+        signUpButton.setForeground(Color.BLUE);
+        signUpButton.setBounds(290, 220, 200, 100);
+        signUpButton.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                System.out.println("hello");
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent e) {}
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent e) {}
+
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {}
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {}
+            
+        });
+        panel.add(signUpButton);
 
         //adding login button
         loginButton = new JButton("Login");

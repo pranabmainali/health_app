@@ -1,9 +1,94 @@
 package GUI;
 
-public class SignUpFrame {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class SignUpFrame extends JFrame implements ActionListener{
     MainGUIInterface guiInterface;
+    private static JLabel usernameLabel;
+    private static JTextField usernameTextField;
+    private static JLabel passwordLabel;
+    private static JPasswordField passwordTextField;
+    private static JLabel firstNameLabel;
+    private static JTextField firstNameTextField;
+    private static JLabel lastNameLabel;
+    private static JTextField lastNameTextField;
+    private static JLabel ageLabel;
+    private static JTextField ageTextField;
+    private static JLabel heightLabel;
+    private static JTextField heighTextField;
+    private static JButton loginButton;
+
 
     public SignUpFrame(MainGUIInterface guiInterface){
         this.guiInterface = guiInterface;
+        this.guiInterface = guiInterface;
+
+        //Frame
+        this.setTitle("Health Simple");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setSize(800, 800);
+
+        //panel
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        this.add(panel);
+
+        //adding username label
+        usernameLabel = new JLabel("Username");
+        usernameLabel.setBounds(60, 150, 100, 40);
+        panel.add(usernameLabel);
+
+        //adding password label
+        passwordLabel = new JLabel("Password");
+        passwordLabel.setBounds(60, 200, 100, 40);
+        panel.add(passwordLabel);
+
+        //adding usernameTextfield
+        usernameTextField = new JTextField();
+        usernameTextField.setBounds(150, 150, 200, 40);
+        panel.add(usernameTextField);
+
+        //adding passwordTextfield
+        passwordTextField = new JPasswordField();
+        passwordTextField.setBounds(150, 200, 200, 40);
+        panel.add(passwordTextField);
+
+        //adding login button
+        loginButton = new JButton("Login");
+        loginButton.addActionListener(this);
+        loginButton.setBounds(200, 300, 100, 50);
+        panel.add(loginButton);
+
+        // setting of icon
+        ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
+        this.setIconImage(health_fitness_icon.getImage());
+
+        //adding everything to everything
+        this.setVisible(true);
+
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String username = usernameTextField.getText();
+        String password = new String (passwordTextField.getPassword());
+        boolean loggedInStatus = guiInterface.mainInterface.logIn(username, password);
+
+        if (loggedInStatus == true){
+            System.out.println("logged in");
+        }
+        else if (loggedInStatus==false){
+            System.out.println("login failed");
+        }
+    }
+    
 }
