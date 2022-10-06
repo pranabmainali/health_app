@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,7 +28,8 @@ public class SignUpFrame extends JFrame implements ActionListener{
     private static JTextField ageTextField;
     private static JLabel heightLabel;
     private static JTextField heightTextField;
-    private static JButton loginButton;
+    private static JComboBox genderOption;
+    private static JLabel genderOptionLabel;
 
 
     public SignUpFrame(MainGUIInterface guiInterface){
@@ -121,6 +123,9 @@ public class SignUpFrame extends JFrame implements ActionListener{
         heightLabel.setBounds(400, 365, 100, 40);
         heightLabel.setFont(new Font(heightLabel.getName(), Font.PLAIN, 20));
         panel.add(heightLabel);
+
+        //adding gender options
+        genderOption = new JComboBox<>();
 
         // setting of icon
         ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
