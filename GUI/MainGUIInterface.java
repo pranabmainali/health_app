@@ -7,23 +7,21 @@ public class MainGUIInterface {
     public MainInterface mainInterface;
     LoginFrame loginFrame;
 
-    public MainGUIInterface(MainInterface mainInterface){
+    public MainGUIInterface(MainInterface mainInterface) {
         this.mainInterface = mainInterface;
         loginFrame = new LoginFrame(this);
-        //run();
+        // run();
     }
 
-    public void run(){
+    public void run() {
 
     }
 
-    public void changeStage(StageEnum nextEnum){
-        if (nextEnum.equals(StageEnum.SignUpPage)){
+    public void changeStage(StageEnum nextEnum) {
+        if (nextEnum.equals(StageEnum.SignUpPage)) {
             SignUpFrame signUpFrame = new SignUpFrame(this);
             loginFrame.dispose();
         }
     }
-
-
 
 }
