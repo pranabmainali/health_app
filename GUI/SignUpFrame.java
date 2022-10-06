@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import ControlInterface.ActivityLevelEnum;
 import ControlInterface.GenderEnum;
 
 public class SignUpFrame extends JFrame implements ActionListener {
@@ -32,6 +33,8 @@ public class SignUpFrame extends JFrame implements ActionListener {
     private static JTextField heightTextField;
     private static JComboBox genderOption;
     private static JLabel genderOptionLabel;
+    private static JComboBox activityLevelOption;
+    private static JLabel activityLeveLabel;
 
     public SignUpFrame(MainGUIInterface guiInterface) {
         this.guiInterface = guiInterface;
@@ -129,6 +132,22 @@ public class SignUpFrame extends JFrame implements ActionListener {
         genderOption = new JComboBox<>(listofGenders);
         genderOption.setBounds(100, 500, 275, 50);
         panel.add(genderOption);
+
+        // adding gender label
+        genderOptionLabel = new JLabel("Gender");
+        genderOptionLabel.setBounds(100, 470, 100, 40);
+        genderOptionLabel.setFont(new Font(genderOptionLabel.getName(), Font.PLAIN, 20));
+        panel.add(genderOptionLabel);
+
+        // adding activityLevel options
+        String listofActivityLevel[] = {ActivityLevelEnum.SEDENTARY.stringValue,
+            ActivityLevelEnum.LIGHTLY.stringValue, 
+            ActivityLevelEnum.MODERATELY.stringValue,
+            ActivityLevelEnum.EXTRA_ACTIVE.stringValue,
+            ActivityLevelEnum.VERY_ACTIVE.stringValue};
+        activityLevelOption = new JComboBox<>(listofActivityLevel);
+        activityLevelOption.setBounds(400, 500, 275, 50);
+        panel.add(activityLevelOption);
 
         // adding gender label
         genderOptionLabel = new JLabel("Gender");
