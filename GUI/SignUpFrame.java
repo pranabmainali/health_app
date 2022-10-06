@@ -125,6 +125,7 @@ public class SignUpFrame extends JFrame implements ActionListener{
         panel.add(heightLabel);
 
         //adding gender options
+        String genderOptionList[] = []
         genderOption = new JComboBox<>();
 
         // setting of icon
