@@ -35,7 +35,6 @@ public class SignUpFrame extends JFrame implements ActionListener {
 
     public SignUpFrame(MainGUIInterface guiInterface) {
         this.guiInterface = guiInterface;
-        this.guiInterface = guiInterface;
 
         // Frame
         this.setTitle("Health Simple");
@@ -125,11 +124,6 @@ public class SignUpFrame extends JFrame implements ActionListener {
         heightLabel.setFont(new Font(heightLabel.getName(), Font.PLAIN, 20));
         panel.add(heightLabel);
 
-<<<<<<< HEAD
-        //adding gender options
-        String genderOptionList[] = []
-        genderOption = new JComboBox<>();
-=======
         // adding gender options
         String listofGenders[] = { GenderEnum.MALE.label, GenderEnum.FEMALE.label };
         genderOption = new JComboBox<>(listofGenders);
