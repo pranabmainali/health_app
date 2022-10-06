@@ -35,6 +35,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
     private static JLabel genderOptionLabel;
     private static JComboBox activityLevelOption;
     private static JLabel activityLeveLabel;
+    private static JButton signUpButton;
 
     public SignUpFrame(MainGUIInterface guiInterface) {
         this.guiInterface = guiInterface;
@@ -149,11 +150,17 @@ public class SignUpFrame extends JFrame implements ActionListener {
         activityLevelOption.setBounds(400, 500, 275, 50);
         panel.add(activityLevelOption);
 
-        // adding gender label
-        genderOptionLabel = new JLabel("Gender");
-        genderOptionLabel.setBounds(100, 470, 100, 40);
-        genderOptionLabel.setFont(new Font(genderOptionLabel.getName(), Font.PLAIN, 20));
-        panel.add(genderOptionLabel);
+        // adding activity level label
+        activityLeveLabel = new JLabel("Gender");
+        activityLeveLabel.setBounds(400, 470, 100, 40);
+        activityLeveLabel.setFont(new Font(activityLeveLabel.getName(), Font.PLAIN, 20));
+        panel.add(activityLeveLabel);
+
+        //adding login button
+        signUpButton = new JButton("Sign Up");
+        signUpButton.addActionListener(this);
+        signUpButton.setBounds(200, 600, 350, 50);
+        panel.add(signUpButton);
 
         // setting of icon
         ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
@@ -164,16 +171,43 @@ public class SignUpFrame extends JFrame implements ActionListener {
 
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
         String username = usernameTextField.getText();
         String password = new String(passwordTextField.getPassword());
-        boolean loggedInStatus = guiInterface.mainInterface.logIn(username, password);
+        String confirmPassword = new String(confirmPasswordTextField.getPassword());
+        int age = Integer.parseInt(ageTextField.getText());
+        int height = Integer.parseInt(heightTextField.getText());
 
-        if (loggedInStatus == true) {
-            System.out.println("logged in");
-        } else if (loggedInStatus == false) {
-            System.out.println("login failed");
+        GenderEnum chosenGender = null;
+        if (genderOption.getSelectedItem().equals(GenderEnum.FEMALE.label)){chosenGender = GenderEnum.FEMALE;}
+        else {chosenGender = GenderEnum.MALE;}
+
+
+        ActivityLevelEnum chosenActivityLevel = null;
+        if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.SEDENTARY.stringValue)){chosenActivityLevel=ActivityLevelEnum.SEDENTARY;}
+        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.LIGHTLY.stringValue)){chosenActivityLevel=ActivityLevelEnum.LIGHTLY;}
+        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.MODERATELY.stringValue)){chosenActivityLevel=ActivityLevelEnum.MODERATELY;}
+        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.VERY_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.VERY_ACTIVE;}
+        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.EXTRA_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.EXTRA_ACTIVE;}
+
+
+        boolean signUpStatus = guiInterface.mainInterface.signUP(username,
+            password,
+            firstName,
+            lastName,
+            age,
+            height,
+            chosenGender,
+            chosenActivityLevel);
+
+        if (signUpStatus == true) {
+            System.out.println("signed up");
+        } else if (signUpStatus == false) {
+            System.out.println("signup failed");
         }
     }
     

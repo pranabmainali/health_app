@@ -73,7 +73,6 @@ public class LoginFrame extends JFrame implements ActionListener{
 
             @Override
             public void mouseClicked(java.awt.event.MouseEvent e) {
-                System.out.println("hello");
                 guiInterface.changeStage(StageEnum.SignUpPage);
             }
 
