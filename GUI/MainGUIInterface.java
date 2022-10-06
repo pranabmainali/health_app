@@ -20,6 +20,9 @@ public class MainGUIInterface {
     public void changeStage(StageEnum nextEnum) {
         if (nextEnum.equals(StageEnum.SignUpPage)) {
             SignUpFrame signUpFrame = new SignUpFrame(this);
+        }
+        else if (nextEnum.equals(StageEnum.LoginPage)) {
+            SignUpFrame signUpFrame = new SignUpFrame(this);
             loginFrame.dispose();
         }
     }
