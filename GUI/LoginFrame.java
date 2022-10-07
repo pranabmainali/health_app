@@ -114,6 +114,7 @@ public class LoginFrame extends JFrame implements ActionListener{
 
         if (loggedInStatus == true){
             System.out.println("logged in");
+            guiInterface.changeStage(StageEnum.MainPage);
         }
         else if (loggedInStatus==false){
             System.out.println("login failed");

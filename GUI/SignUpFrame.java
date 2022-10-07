@@ -14,9 +14,11 @@ import javax.swing.JTextField;
 
 import ControlInterface.ActivityLevelEnum;
 import ControlInterface.GenderEnum;
+import ControlInterface.StageEnum;
 
 public class SignUpFrame extends JFrame implements ActionListener {
     MainGUIInterface guiInterface;
+    JPanel panel;
     private static JLabel usernameLabel;
     private static JTextField usernameTextField;
     private static JLabel passwordLabel;
@@ -47,7 +49,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
         this.setSize(800, 800);
 
         // panel
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(null);
         this.add(panel);
 
@@ -151,8 +153,8 @@ public class SignUpFrame extends JFrame implements ActionListener {
         panel.add(activityLevelOption);
 
         // adding activity level label
-        activityLeveLabel = new JLabel("Gender");
-        activityLeveLabel.setBounds(400, 470, 100, 40);
+        activityLeveLabel = new JLabel("Activity Level");
+        activityLeveLabel.setBounds(400, 470, 200, 40);
         activityLeveLabel.setFont(new Font(activityLeveLabel.getName(), Font.PLAIN, 20));
         panel.add(activityLeveLabel);
 
@@ -182,32 +184,44 @@ public class SignUpFrame extends JFrame implements ActionListener {
         int age = Integer.parseInt(ageTextField.getText());
         int height = Integer.parseInt(heightTextField.getText());
 
-        GenderEnum chosenGender = null;
-        if (genderOption.getSelectedItem().equals(GenderEnum.FEMALE.label)){chosenGender = GenderEnum.FEMALE;}
-        else {chosenGender = GenderEnum.MALE;}
+        if (password.equals(confirmPassword)==true){
+
+            GenderEnum chosenGender = null;
+            if (genderOption.getSelectedItem().equals(GenderEnum.FEMALE.label)){chosenGender = GenderEnum.FEMALE;}
+            else {chosenGender = GenderEnum.MALE;}
 
 
-        ActivityLevelEnum chosenActivityLevel = null;
-        if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.SEDENTARY.stringValue)){chosenActivityLevel=ActivityLevelEnum.SEDENTARY;}
-        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.LIGHTLY.stringValue)){chosenActivityLevel=ActivityLevelEnum.LIGHTLY;}
-        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.MODERATELY.stringValue)){chosenActivityLevel=ActivityLevelEnum.MODERATELY;}
-        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.VERY_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.VERY_ACTIVE;}
-        else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.EXTRA_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.EXTRA_ACTIVE;}
+            ActivityLevelEnum chosenActivityLevel = null;
+            if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.SEDENTARY.stringValue)){chosenActivityLevel=ActivityLevelEnum.SEDENTARY;}
+            else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.LIGHTLY.stringValue)){chosenActivityLevel=ActivityLevelEnum.LIGHTLY;}
+            else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.MODERATELY.stringValue)){chosenActivityLevel=ActivityLevelEnum.MODERATELY;}
+            else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.VERY_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.VERY_ACTIVE;}
+            else if (activityLevelOption.getSelectedItem().equals(ActivityLevelEnum.EXTRA_ACTIVE.stringValue)){chosenActivityLevel=ActivityLevelEnum.EXTRA_ACTIVE;}
 
 
-        boolean signUpStatus = guiInterface.mainInterface.signUP(username,
-            password,
-            firstName,
-            lastName,
-            age,
-            height,
-            chosenGender,
-            chosenActivityLevel);
+            boolean signUpStatus = guiInterface.mainInterface.signUP(username,
+                password,
+                firstName,
+                lastName,
+                age,
+                height,
+                chosenGender,
+                chosenActivityLevel);
 
-        if (signUpStatus == true) {
-            System.out.println("signed up");
-        } else if (signUpStatus == false) {
-            System.out.println("signup failed");
+            if (signUpStatus == true) {
+                System.out.println("signed up");
+                guiInterface.changeStage(StageEnum.LoginPage);
+            } else if (signUpStatus == false) {
+                System.out.println("signup failed");
+            }
+        }
+
+        else {
+            JLabel passNotSame = new JLabel("PLEASE MAKE SURE PASSWORD IS THE SAME");
+            passNotSame.setBounds(300, 550, 400, 30);
+            passNotSame.setFont(new Font(activityLeveLabel.getName(), Font.PLAIN, 30));
+            panel.add(passNotSame);
+            this.setVisible(true);
         }
     }
     

@@ -1,6 +1,5 @@
 package ControlInterface;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MainInterface {
     FoodInterface foodInterface;
@@ -8,8 +7,10 @@ public class MainInterface {
     UserInterface userInterface;
     ArrayList<User> listOfUsers;
     User currentUser;
+    StageEnum currentStage;
 
     public MainInterface() {
+        currentStage = StageEnum.LoginPage;
         foodInterface = new FoodInterface(this);
         exerciseInterface = new ExerciseInterface(this);
         userInterface = new UserInterface(this);
