@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
@@ -19,6 +20,7 @@ public class LoginFrame extends JFrame implements ActionListener{
 
     private static JLabel usernameLabel;
     private static JLabel passwordLabel;
+    private static JLabel invalidLogin;
     private static JTextField usernameTextField;
     private static JPasswordField passwordTextField;
     private static JButton loginButton;
@@ -97,6 +99,13 @@ public class LoginFrame extends JFrame implements ActionListener{
         loginButton.setBounds(200, 300, 100, 50);
         panel.add(loginButton);
 
+        //adding invalid login credentials label 
+        invalidLogin = new JLabel();
+        invalidLogin.setBounds(50, 375, 500, 50);
+        invalidLogin.setForeground(Color.RED);
+        invalidLogin.setFont(new Font(usernameLabel.getName(), Font.PLAIN, 10));
+        panel.add(invalidLogin);
+
         // setting of icon
         ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
         this.setIconImage(health_fitness_icon.getImage());
@@ -118,6 +127,7 @@ public class LoginFrame extends JFrame implements ActionListener{
         }
         else if (loggedInStatus==false){
             System.out.println("login failed");
+            invalidLogin.setText("Invalid log in credentials, please make sure you have signed up and enter the correct credentials.");
         }
     }
 
