@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +39,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
     private static JComboBox activityLevelOption;
     private static JLabel activityLeveLabel;
     private static JButton signUpButton;
+    private static JLabel passNotSame;
 
     public SignUpFrame(MainGUIInterface guiInterface) {
         this.guiInterface = guiInterface;
@@ -164,6 +166,13 @@ public class SignUpFrame extends JFrame implements ActionListener {
         signUpButton.setBounds(200, 600, 350, 50);
         panel.add(signUpButton);
 
+        //addring wrong password label
+        passNotSame = new JLabel();
+        passNotSame.setBounds(200, 550, 400, 30);
+        passNotSame.setFont(new Font(activityLeveLabel.getName(), Font.PLAIN, 20));
+        passNotSame.setForeground(Color.RED);
+        panel.add(passNotSame);
+
         // setting of icon
         ImageIcon health_fitness_icon = new ImageIcon("Icons/health_fitness_icon.png");
         this.setIconImage(health_fitness_icon.getImage());
@@ -217,11 +226,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
         }
 
         else {
-            JLabel passNotSame = new JLabel("PLEASE MAKE SURE PASSWORD IS THE SAME");
-            passNotSame.setBounds(300, 550, 400, 30);
-            passNotSame.setFont(new Font(activityLeveLabel.getName(), Font.PLAIN, 30));
-            panel.add(passNotSame);
-            this.setVisible(true);
+            passNotSame.setText("PLEASE make sure password is the same!");
         }
     }
     
