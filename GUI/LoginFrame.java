@@ -29,6 +29,7 @@ public class LoginFrame extends JFrame implements ActionListener{
     public LoginFrame(MainGUIInterface guiInterface) {
 
         this.guiInterface = guiInterface;
+        System.out.println("hello world");
 
         //Frame
         this.setTitle("Health Simple");
