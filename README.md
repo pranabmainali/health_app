@@ -1,2 +1,3 @@
 # health_app
-basically my fitness pal rip off
+
+tracks calories and exercises
