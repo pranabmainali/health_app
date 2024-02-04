@@ -20,7 +20,7 @@ public class FoodInterface {
      * @returns none, appends the meal in question to the arraylist of meal
      */
     public void addMeal(Meal meal){
-
+        meals.add(meal);
 
     }
 }
